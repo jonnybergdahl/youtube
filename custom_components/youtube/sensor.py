@@ -69,6 +69,10 @@ async def get_channel_id(session, user_name):
     _LOGGER.debug("Channel id for name %s: %s", user_name, channel_id)
     return channel_id
 
+def _get_og_image(page_html: str) -> str | None:
+    # YouTube pages typically include a social preview image
+    m = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', page_html)
+    return m.group(1) if m else None
 
 class YoutubeSensor(Entity):
     """YouTube Sensor class"""
@@ -191,11 +195,9 @@ class YoutubeSensor(Entity):
             if '{"iconType":"LIVE"}' in html:
                 live = True
                 _LOGGER.debug(f'{self._name} - Channel is live')
-            regex = r"\"width\":48,\"height\":48},{\"url\":\"(.*?)\",\"width\":88,\"height\":88},{\"url\":"
-            found = re.findall(regex, html, re.MULTILINE)
-            if found:
-                channel_image = found[0]
-                channel_image = channel_image.replace("=s88-c-k-c0x00ffffff-no-rj", "")
+            og_img = _get_og_image(html)
+            if og_img:
+                channel_image = og_img
         except Exception as error:  # pylint: disable=broad-except
             _LOGGER.debug(f'{self._name} - is_channel_live(): Error {error}')
         return live, channel_image
