@@ -1,10 +1,11 @@
 {
   "domain": "youtube",
-  "name": "Youtube Sensor",
-  "version": "0.0.2",
-  "documentation": "https://github.com/custom-components/youtube",
+  "name": "YouTube Sensor",
+  "version": "1.0.2",
+  "documentation": "https://github.com/jonnybergdahl/youtube",
+  "issue_tracker": "https://github.com/jonnybergdahl/youtube/issues",
   "dependencies": [],
-  "codeowners": ["@pinkywafer"],
+  "codeowners": ["@jonnybergdahl"],
   "requirements": [],
   "iot_class": "cloud_polling"
 }
