@@ -1,9 +1,14 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
 # youtube
 
 _A platform which give you info about the newest video on a channel._
 
-**This uses web scraping, a better implementation will be to use the API.**
+This is a forked version of https://github.com/custom-components/youtube as that seems to have become abandoned. 
+
+It fixes a few issues with the old integration:
+ - Adds support for @channel style channel names so you don't have to lookup the Yutube ID.
+ - Fixxes issues with the Youtube consent cookie
+ - Fixes communication timeout issues
+ - Fixes the broken channel image issue
 
 ![example][exampleimg]
 
@@ -72,3 +77,4 @@ key | type | description
 ***
 
 [exampleimg]: example.png
+
