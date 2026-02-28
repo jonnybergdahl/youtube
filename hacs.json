@@ -1,7 +1,5 @@
 {
   "name": "youtube",
-  "zip_release": true,
-  "filename": "youtube.zip",
   "iot_class": "Cloud Poll",
   "homeassistant": "2026.1.0"
 }
