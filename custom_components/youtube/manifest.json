@@ -1,7 +1,7 @@
 {
   "domain": "youtube",
   "name": "YouTube Sensor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "documentation": "https://github.com/jonnybergdahl/youtube",
   "issue_tracker": "https://github.com/jonnybergdahl/youtube/issues",
   "dependencies": [],
@@ -9,3 +9,4 @@
   "requirements": [],
   "iot_class": "cloud_polling"
 }
+
